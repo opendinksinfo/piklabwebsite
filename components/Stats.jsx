@@ -6,7 +6,7 @@ function Stats() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: 32 }}>
           {[
             { v: '4,000+', sub: 'players · Concord pilot', accent: false },
-            { v: '9 + 16', sub: 'courts now + 2026', accent: true },
+            { v: '9 + 15', sub: 'courts now + 2026', accent: true },
             { v: '4', sub: 'robot classes', accent: false },
             { v: '24 / 7', sub: 'pilot ops live', accent: false },
           ].map((s, i) => (

@@ -100,7 +100,7 @@ function Hero() {
               </div>
               <div className="hero-meta-cell">
                 <div className="mono hero-meta-k">Opening 2026</div>
-                <div className="hero-meta-v">16 courts · Fresno</div>
+                <div className="hero-meta-v">15 courts · Fresno</div>
               </div>
             </div>
           </div>
@@ -190,7 +190,7 @@ function Hero() {
                   ['CONF', `0.${94 + Math.round(Math.sin(t * 0.7) * 4)}`],
                 ]}/>
                 <Hud x={970} y={130} lines={[
-                  ['COURT', '04 / 16'],
+                  ['COURT', '04 / 15'],
                   ['SESSION', '00:42:18'],
                   ['LIVE', '●'],
                 ]} accent="coral"/>
