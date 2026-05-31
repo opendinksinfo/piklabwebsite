@@ -25,3 +25,9 @@ build/
 # Firebase
 .firebase/
 firebase-debug.log
+
+# Design handoff artifacts (downloaded from Claude Design, transient)
+*.gz
+*.tar
+_new*/
+_handoff*/
