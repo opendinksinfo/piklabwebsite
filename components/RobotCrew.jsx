@@ -72,7 +72,7 @@ function RobotCrew() {
             <span style={{ color: 'var(--green)' }}>built to do the work.</span>
           </h2>
           <p style={{ color: 'rgba(250, 250, 247, 0.7)', fontSize: '1.05rem', marginTop: 20, lineHeight: 1.65, maxWidth: '60ch' }}>
-            Humans play, coach, and run the lab. The repetitive, physical, never-stops work — check-in, ball collection, court reset, drills — runs on a small fleet of robots we built ourselves. Designed for the club, but each one is a general-purpose answer to a problem every physical space has.
+            Humans play and coach. Robots do the rest. Each one general-purpose — built for the club, built to travel.
           </p>
         </div>
 

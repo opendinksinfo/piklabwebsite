@@ -38,8 +38,8 @@
 <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
 
-<script type="text/babel" src="components/Nav.jsx?v=10"></script>
-<script type="text/babel" src="components/Footer.jsx?v=10"></script>
+<script type="text/babel" src="components/Nav.jsx?v=11"></script>
+<script type="text/babel" src="components/Footer.jsx?v=11"></script>
 
 <script type="text/babel">
 function ConcordPilot() {
@@ -88,11 +88,7 @@ function ConcordPilot() {
         </h1>
 
         <p style={{ color: 'rgba(250, 250, 247, 0.75)', fontSize: '1.15rem', maxWidth: '60ch', marginTop: 24, lineHeight: 1.6 }}>
-          Our first PikLab pilot is live at <strong>Indoor Pickleball X Concord</strong> — a 9-court indoor pickleball club with 4,000+ players. We provide the software (booking, court ops, AI shot tracking) today. The full PikLab robotics fleet rolls out in 2026.
-        </p>
-
-        <p style={{ color: 'rgba(250, 250, 247, 0.55)', fontSize: '0.95rem', maxWidth: '60ch', marginTop: 12, lineHeight: 1.6 }}>
-          Indoor Pickleball X is the host club. PikLab is the technology partner. Together we use the busy floor every day to harden the systems we'll deploy at our flagship Fresno club, opening Winter 2026.
+          Software pilot at <strong>Indoor Pickleball X Concord</strong> — 9 courts, 4,000+ players. Booking, court ops, AI: live. Robots: 2026. Indoor Pickleball X hosts, PikLab provides the tech.
         </p>
 
         {/* Stats / facts */}
@@ -136,10 +132,10 @@ function ConcordPilot() {
           </div>
           <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gap: 14 }}>
             {[
-              ['Booking', 'Court reservations, league sign-ups, drop-in scheduling — all on PikLab software.'],
-              ['Court ops', 'Reservations, conflicts, no-shows, day-of swaps coordinated by our LLM orchestrator.'],
-              ['AI shot tracking', 'Six overhead cameras per court. Live ball, paddle, and player tracking — fed back to coaching reports.'],
-              ['Robotics — coming 2026', 'Humanoid concierge, ball feeders, and quadruped court managers will deploy at Indoor Pickleball X next year.'],
+              ['Booking', 'Courts, leagues, drop-ins — all PikLab.'],
+              ['Court ops', 'Conflicts, no-shows, day-of swaps — LLM coordinated.'],
+              ['AI shot tracking', 'Six cameras per court. Live tracking → coaching reports.'],
+              ['Robotics — 2026', 'Humanoid concierge, ball feeders, quadruped court managers — deploying 2026.'],
             ].map(([k, v]) => (
               <li key={k} style={{ display: 'grid', gridTemplateColumns: '170px 1fr', gap: 20, padding: '14px 0', borderTop: '1px solid rgba(196, 216, 46, 0.12)' }}>
                 <span className="mono" style={{ color: 'var(--green)', fontSize: '0.74rem', letterSpacing: '0.12em' }}>{k.toUpperCase()}</span>

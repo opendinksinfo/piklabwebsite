@@ -75,7 +75,7 @@ function BrandHero() {
             <span style={{ fontStyle: 'italic', fontWeight: 500, color: 'var(--coral)' }}>actual players.</span>
           </h1>
           <p style={{ marginTop: 24, fontSize: '1.05rem', color: 'var(--warm-gray)', maxWidth: '40ch', lineHeight: 1.55 }}>
-            Software pilot live at Indoor Pickleball X Concord — 9 courts, 4,000+ players. Fresno opens Winter 2026 with the full robotics fleet.
+            Pilot live in Concord — 9 courts, 4,000+ players. Fresno 2026.
           </p>
 
           <div style={{
@@ -150,7 +150,7 @@ function BrandHero() {
             <span style={{ fontStyle: 'italic', fontWeight: 500, color: 'var(--green)' }}>by way of sport.</span>
           </h1>
           <p style={{ marginTop: 24, fontSize: '1.05rem', color: 'rgba(250, 250, 247, 0.65)', maxWidth: '40ch', lineHeight: 1.55 }}>
-            LLM orchestrators, autonomous court ops, real-world embodied agents. The club is our lab — and our laboratory.
+            LLM orchestrators. Autonomous floors. Real robots, real shifts.
           </p>
 
           <div style={{

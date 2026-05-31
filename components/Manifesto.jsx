@@ -10,7 +10,7 @@ function Manifesto() {
               A robotics company. The club is where we deploy.
             </h2>
             <p style={{ color: 'var(--warm-gray)', fontSize: '1.05rem', marginTop: 20, maxWidth: '38ch', lineHeight: 1.65 }}>
-              Our software is live at our first pilot — Indoor Pickleball X Concord, 9 courts, 4,000+ players. Every day on a busy floor is where we learn exactly what robotics needs to handle. PikLab Fresno opens Winter 2026 as the first venue with the full fleet — humanoids, ball feeders, court managers — coordinated by the same AI.
+              Software live today. Robots next year. Generalizable everywhere. Our Concord pilot is the testbed. Fresno ships the full fleet.
             </p>
           </div>
 
@@ -18,21 +18,21 @@ function Manifesto() {
             <ManifestoBlock
               kicker="The platform"
               title="An AI that runs physical floors."
-              body="One LLM-driven system handles intent, scheduling, traffic, and the robot fleet. It speaks plain English, reads the state of the room, and turns both into the next set of physical actions."
+              body="One LLM. Speaks plain English. Runs intent → schedule → robots."
               icon={<RadarIcon />}
               tone="dark"
             />
             <ManifestoBlock
               kicker="The first deployment"
               title="A real pickleball club."
-              body="Sixteen indoor courts, climate controlled. Open play, leagues, clinics. Members get a club that just works; we get a busy real-world testbed where every robot pulls a real shift, every day."
+              body="Pilot at Indoor Pickleball X Concord. Members get a club that just works. We get a busy testbed."
               icon={<CourtIcon />}
               tone="light"
             />
             <ManifestoBlock
               kicker="The wider play"
               title="Designed to generalize."
-              body="What runs a club's floor — humanoids, quadrupeds, ball feeders, sweepers, the AI that coordinates them — is built to generalize to gyms, hospitality, warehouses, and any space where physical coordination is messy."
+              body="Built to generalize. Gyms, hotels, warehouses, anywhere physical things move."
               icon={<RobotIcon />}
               tone="green"
             />

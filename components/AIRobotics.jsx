@@ -67,7 +67,7 @@ function AIRobotics() {
             <span style={{ color: 'var(--green)' }}>orchestrated by AI.</span>
           </h2>
           <p style={{ color: 'rgba(250, 250, 247, 0.7)', fontSize: '1.05rem', marginTop: 20, lineHeight: 1.65 }}>
-            One LLM is the brain — wired to court state, member profiles, the reservation book, and the robot fleet. It plans, reasons, and turns sentences into structured instructions. The robots are the body. Every decision in the system is informed by what we see at our Concord pilot — 4,000 players moving through 9 courts, where the small problems aren't small when they happen 200 times a day.
+            One LLM. Four robot classes. Tuned on a real club every day.
           </p>
         </div>
 
@@ -88,10 +88,10 @@ function AIRobotics() {
 
             <div style={{ display: 'grid', gap: 10, marginTop: 24 }}>
               {[
-                { k: 'INTENT', v: 'turns "I want to drill backhand" into a 30-min M-7 session' },
-                { k: 'PLAN', v: 'schedules courts, robots, and coaches 24h ahead' },
-                { k: 'TRAFFIC', v: 'balances open play, leagues, and drills in real time' },
-                { k: 'MEMORY', v: 'remembers your level, your goals, your knee' },
+                { k: 'INTENT', v: 'Sentences → robot sessions' },
+                { k: 'PLAN', v: '24h ahead · courts + robots + coaches' },
+                { k: 'TRAFFIC', v: 'Real-time balance' },
+                { k: 'MEMORY', v: 'Your level. Your goals. Your knee.' },
               ].map(item => (
                 <div key={item.k} style={{ display: 'grid', gridTemplateColumns: '78px 1fr', gap: 14, padding: '12px 14px', borderRadius: 8, background: 'rgba(15, 26, 46, 0.4)', border: '1px solid rgba(196, 216, 46, 0.15)' }}>
                   <span className="mono" style={{ color: 'var(--green)', fontSize: '0.66rem', letterSpacing: '0.14em', alignSelf: 'center' }}>{item.k}</span>

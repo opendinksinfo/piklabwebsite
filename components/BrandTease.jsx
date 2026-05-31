@@ -7,7 +7,7 @@ function BrandTease() {
         <div style={{ maxWidth: 840, marginBottom: 64 }}>
           <div className="eyebrow">PikLab is two things at once</div>
           <h2 className="h-section" style={{ fontSize: 'clamp(2.4rem, 5vw, 4rem)', marginTop: 18 }}>
-            A real pickleball club where every paddle, ball, and court is also a sensor — and a research lab where what we learn doesn't stay in pickleball.
+            Two halves: a club, and the lab that runs it.
           </h2>
         </div>
 
@@ -55,7 +55,7 @@ function BrandTease() {
 
             <div style={{ position: 'relative', marginTop: 32 }}>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gap: 10 }}>
-                {['Pilot live at Indoor Pickleball X Concord', 'PikLab software runs court ops + AI today', 'Fresno Winter 2026: 16 courts + full robotics fleet', 'Three more cities by 2027'].map(x => (
+                {['Pilot live · Concord', 'Software runs the floor', 'Robotics flagship · Fresno 2026', '5 cities by 2027'].map(x => (
                   <li key={x} style={{ display: 'flex', alignItems: 'center', gap: 10, fontSize: '0.92rem', color: 'var(--navy)' }}>
                     <span style={{ width: 5, height: 5, borderRadius: '50%', background: 'var(--coral)' }}></span>
                     {x}
@@ -130,7 +130,7 @@ function BrandTease() {
 
             <div style={{ position: 'relative', marginTop: 32 }}>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gap: 10 }}>
-                {['Real-world embodied agents', 'LLM orchestrator for facility ops', 'Vision + tracking research', 'Open papers, hiring engineers'].map(x => (
+                {['Embodied agents', 'LLM facility orchestrator', 'Vision + tracking', 'Open papers · hiring'].map(x => (
                   <li key={x} style={{ display: 'flex', alignItems: 'center', gap: 10, fontSize: '0.92rem', color: 'rgba(250, 250, 247, 0.85)' }}>
                     <span style={{ width: 5, height: 5, borderRadius: '50%', background: 'var(--green)' }}></span>
                     {x}

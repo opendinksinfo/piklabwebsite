@@ -1,14 +1,11 @@
 // "Marquee" of stats / values
 function Marquee() {
   const items = [
-    'Pilot live · Indoor Pickleball X Concord',
-    'Robots for physical spaces',
-    '4,000+ players on PikLab software',
-    'Vision · planning · fleets',
+    'Pilot live · Concord',
+    'AI shot tracking',
     'Robotics flagship · Fresno 2026',
     'Built to generalize',
-    'Concord pilot → Fresno → 5 cities by 2027',
-    'AI shot tracking',
+    '5 cities by 2027',
   ];
   return (
     <section style={{ background: 'var(--navy)', color: 'var(--off-white)', overflow: 'hidden', padding: '20px 0', borderTop: '1px solid rgba(196, 216, 46, 0.2)', borderBottom: '1px solid rgba(196, 216, 46, 0.2)' }}>

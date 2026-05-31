@@ -9,7 +9,7 @@ function Footer() {
               <span>PikLab</span>
             </div>
             <p style={{ color: 'rgba(250, 250, 247, 0.6)', fontSize: '0.92rem', maxWidth: 280, lineHeight: 1.6 }}>
-              Building the robotics that run physical spaces. Starting in the pickleball club.
+              Robotics for physical spaces. Starting at the pickleball club.
             </p>
             <div style={{ marginTop: 20 }}>
               <div className="mono" style={{ color: 'var(--green)', fontSize: '0.66rem', letterSpacing: '0.14em', marginBottom: 6 }}>CONTACT</div>

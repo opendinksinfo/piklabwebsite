@@ -9,7 +9,7 @@ function Locations({ compact = true }) {
       courts: 9,
       sqft: '4,000+ players',
       opened: 'Software live',
-      features: ['Pilot at Indoor Pickleball X', 'Booking + court ops + AI today', 'Robots rolling out 2026'],
+      features: ['Booking + AI live', 'Robots 2026'],
       tag: 'PILOT',
     },
     {
@@ -21,7 +21,7 @@ function Locations({ compact = true }) {
       courts: 16,
       sqft: '42,000',
       opened: 'Winter 2026',
-      features: ['Full lab planned', 'Robot bays · 4', 'Café & pro shop'],
+      features: ['Full robotics fleet', 'Café & pro shop'],
       tag: 'FLAGSHIP',
       cta: { label: 'Reserve your spot on OpenDinks', href: 'https://opendinks.com' },
     },

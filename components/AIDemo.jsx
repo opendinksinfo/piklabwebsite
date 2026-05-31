@@ -39,7 +39,7 @@ function AIDemo() {
               <span style={{ color: 'var(--green)' }}>actually watches the ball.</span>
             </h2>
             <p style={{ color: 'rgba(250, 250, 247, 0.7)', fontSize: '1.05rem', marginTop: 20, lineHeight: 1.65 }}>
-              Six overhead cameras per court. On-prem inference at 120 fps. We track every ball position, paddle angle, and player movement and turn it into something useful — a coaching report, a drill plan, an honest line call.
+              Six cameras. 120 fps. Every ball, paddle, player — tracked and useful.
             </p>
           </div>
           <div style={{ display: 'flex', gap: 8, padding: 4, background: 'rgba(196, 216, 46, 0.08)', borderRadius: 999, border: '1px solid rgba(196, 216, 46, 0.15)' }}>

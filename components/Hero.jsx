@@ -78,7 +78,7 @@ function Hero() {
               ))}
             </h1>
             <p className="hero-sub">
-              We build the AI and robotics that run physical spaces. Our first pilot is live at Indoor Pickleball X Concord — PikLab software handles booking, court ops, and shot tracking today. Robots roll in next.
+              AI and robotics for physical spaces. Software live in Concord today. Robots next, Fresno 2026.
             </p>
             <div className="hero-ctas">
               <a href="concord.html" className="btn btn-primary">

@@ -5,10 +5,10 @@ function Stats() {
       <div className="container">
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: 32 }}>
           {[
-            { v: '4,000+', sub: 'players at our Concord pilot', accent: false },
-            { v: '9 + 16', sub: 'courts piloting + opening 2026', accent: true },
-            { v: '4', sub: 'robot classes built to generalize', accent: false },
-            { v: '24 / 7', sub: 'pilot ops at Indoor Pickleball X', accent: false },
+            { v: '4,000+', sub: 'players · Concord pilot', accent: false },
+            { v: '9 + 16', sub: 'courts now + 2026', accent: true },
+            { v: '4', sub: 'robot classes', accent: false },
+            { v: '24 / 7', sub: 'pilot ops live', accent: false },
           ].map((s, i) => (
             <div key={i} style={{ borderLeft: i === 0 ? 'none' : '1px solid var(--gray-200)', paddingLeft: i === 0 ? 0 : 24 }} className="stats-cell">
               <div style={{
