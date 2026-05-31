@@ -1,0 +1,27 @@
+# Claude Code local state
+.claude/
+
+# OS junk
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# Editor
+.vscode/
+.idea/
+
+# Build/dependency artifacts (none today, but ready for future)
+node_modules/
+dist/
+build/
+.cache/
+
+# Secrets (none today, but ready)
+.env
+.env.local
+.env.*.local
+
+# Firebase
+.firebase/
+firebase-debug.log

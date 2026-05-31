@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>PikLab San Jose — Tournament-Grade Pickleball Club, Opens Q4 2027</title>
+<meta name="description" content="PikLab San Jose: our largest location. 12 tournament-grade indoor pickleball courts, 5 robot bays, dedicated PikLab research wing. Opens Q4 2027."/>
+<link rel="canonical" href="https://piklab.ai/sanjose.html"/>
+<meta name="theme-color" content="#0F1A2E"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://piklab.ai/sanjose.html"/>
+<meta property="og:title" content="PikLab San Jose — Opens Q4 2027"/>
+<meta property="og:description" content="Our largest location. 12 tournament-grade courts, 5 robot bays, dedicated research wing."/>
+<meta property="og:site_name" content="PikLab"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:site" content="@PikLab001"/>
+<meta name="twitter:title" content="PikLab San Jose — Opens Q4 2027"/>
+<meta name="twitter:description" content="Our largest location. Tournament-grade with 12 courts."/>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","name":"PikLab","url":"https://piklab.ai/","email":"info@piklab.ai","sameAs":["https://x.com/PikLab001","https://opendinks.com"],"description":"PikLab is a pickleball club and AI/robotics lab building the systems that run physical spaces.","logo":"https://piklab.ai/favicon.svg"}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link rel="icon" type="image/svg+xml" href="favicon.svg"/>
+<link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+<div id="root"></div>
+<noscript>
+  <h1>PikLab San Jose — Opens Q4 2027</h1>
+  <p>Our largest location. 12 tournament-grade indoor pickleball courts in greater San Jose CA, with 5 robot bays and a dedicated PikLab research wing. Site selection in progress. Opens Q4 2027.</p>
+  <p><a href="concord.html">See the Concord pilot</a> · <a href="locations.html">All locations</a></p>
+</noscript>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+<script type="text/babel" src="components/Nav.jsx?v=10"></script>
+<script type="text/babel" src="components/ComingSoon.jsx?v=10"></script>
+<script type="text/babel" src="components/Footer.jsx?v=10"></script>
+
+<script type="text/babel">
+function App() {
+  return (
+    <>
+      <Nav active="locations"/>
+      <ComingSoon
+        city="San Jose"
+        state="CA"
+        status="soon"
+        dateLabel="Q4 2027"
+        address="Site selection in progress"
+        courts={12}
+        sqft="48,000"
+        description="Our largest location. Tournament-grade with twelve indoor courts, five robot bays, and a dedicated PikLab research wing. Site selection underway in greater San Jose."
+      />
+      <Footer/>
+    </>
+  );
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
+</script>
+</body>
+</html>

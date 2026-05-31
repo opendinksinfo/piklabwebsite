@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>PikLab Portland — Indoor Pickleball Club, Opens Q3 2027</title>
+<meta name="description" content="PikLab Portland opens Q3 2027 in the Central Eastside Industrial District. 8 indoor courts, vision system standard, 3 robot bays, in-house recovery suite."/>
+<link rel="canonical" href="https://piklab.ai/portland.html"/>
+<meta name="theme-color" content="#0F1A2E"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://piklab.ai/portland.html"/>
+<meta property="og:title" content="PikLab Portland — Opens Q3 2027"/>
+<meta property="og:description" content="Our first PNW location. Indoor pickleball with PikLab AI and robotics. Central Eastside, Portland OR."/>
+<meta property="og:site_name" content="PikLab"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:site" content="@PikLab001"/>
+<meta name="twitter:title" content="PikLab Portland — Opens Q3 2027"/>
+<meta name="twitter:description" content="Our first PNW location. Indoor pickleball + AI + robotics."/>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","name":"PikLab","url":"https://piklab.ai/","email":"info@piklab.ai","sameAs":["https://x.com/PikLab001","https://opendinks.com"],"description":"PikLab is a pickleball club and AI/robotics lab building the systems that run physical spaces.","logo":"https://piklab.ai/favicon.svg"}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link rel="icon" type="image/svg+xml" href="favicon.svg"/>
+<link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+<div id="root"></div>
+<noscript>
+  <h1>PikLab Portland — Opens Q3 2027</h1>
+  <p>Our first PNW location. 8 indoor pickleball courts in Portland's Central Eastside Industrial District, OR. Vision system standard, 3 robot bays, in-house recovery suite.</p>
+  <p><a href="concord.html">See the Concord pilot</a> · <a href="locations.html">All locations</a></p>
+</noscript>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+<script type="text/babel" src="components/Nav.jsx?v=10"></script>
+<script type="text/babel" src="components/ComingSoon.jsx?v=10"></script>
+<script type="text/babel" src="components/Footer.jsx?v=10"></script>
+
+<script type="text/babel">
+function App() {
+  return (
+    <>
+      <Nav active="locations"/>
+      <ComingSoon
+        city="Portland"
+        state="OR"
+        status="soon"
+        dateLabel="Q3 2027"
+        address="Central Eastside"
+        courts={8}
+        sqft="34,000"
+        description="Our first PNW location. Eight indoor courts in the Central Eastside Industrial District, vision system standard, three robot bays, plus an in-house recovery suite."
+      />
+      <Footer/>
+    </>
+  );
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
+</script>
+</body>
+</html>

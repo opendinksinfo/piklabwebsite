@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>PikLab — Pickleball Club + AI & Robotics Lab | Concord & Fresno</title>
+<meta name="description" content="PikLab is a pickleball club and an AI & robotics lab. Software pilot live at Indoor Pickleball X Concord (9 courts, 4,000+ players). Fresno opens Winter 2026 with the full robotics fleet."/>
+<link rel="canonical" href="https://piklab.ai/"/>
+<meta name="theme-color" content="#0F1A2E"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://piklab.ai/"/>
+<meta property="og:title" content="PikLab — Pickleball Club + AI & Robotics Lab"/>
+<meta property="og:description" content="Software pilot live at Indoor Pickleball X Concord. Fresno opens Winter 2026 with the full robotics fleet — humanoids, ball feeders, court managers, all coordinated by an LLM."/>
+<meta property="og:site_name" content="PikLab"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:site" content="@PikLab001"/>
+<meta name="twitter:title" content="PikLab — Pickleball Club + AI & Robotics Lab"/>
+<meta name="twitter:description" content="Pilot live at Indoor Pickleball X Concord. Fresno opens Winter 2026."/>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","name":"PikLab","url":"https://piklab.ai/","email":"info@piklab.ai","sameAs":["https://x.com/PikLab001","https://opendinks.com"],"description":"PikLab is a pickleball club and AI/robotics lab building the systems that run physical spaces.","logo":"https://piklab.ai/favicon.svg"}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link rel="icon" type="image/svg+xml" href="favicon.svg"/>
+<link rel="stylesheet" href="styles.css"/>
+<style>
+  /* hide global nav on the brand front door — the split hero IS the nav */
+  body.brand-front .nav { display: none; }
+</style>
+</head>
+<body class="brand-front">
+<div id="root"></div>
+<noscript>
+  <h1>PikLab — Pickleball Club + AI &amp; Robotics Lab</h1>
+  <p>PikLab is a pickleball club and an AI &amp; robotics lab. Our first pilot is live at Indoor Pickleball X Concord — a 9-court club with 4,000+ players running on PikLab software. Fresno opens Winter 2026 as our flagship robotics-equipped club.</p>
+  <ul>
+    <li><a href="club.html">The Club — open play, leagues, robot-led drills</a></li>
+    <li><a href="lab.html">The Lab — AI orchestrators, real-world robotics</a></li>
+    <li><a href="locations.html">All locations — Concord, Fresno, Sacramento, Portland, San Jose</a></li>
+  </ul>
+  <p>Contact: <a href="mailto:info@piklab.ai">info@piklab.ai</a></p>
+</noscript>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+<script type="text/babel" src="components/BrandHero.jsx?v=10"></script>
+<script type="text/babel" src="components/BrandTease.jsx?v=10"></script>
+<script type="text/babel" src="components/Footer.jsx?v=10"></script>
+
+<script type="text/babel">
+function App() {
+  return (
+    <>
+      <BrandHero/>
+      <BrandTease/>
+      <Footer/>
+    </>
+  );
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
+</script>
+</body>
+</html>
