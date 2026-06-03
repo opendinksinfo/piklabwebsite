@@ -19,7 +19,7 @@ function Locations({ compact = true }) {
       label: 'Coming Winter 2026 · Flagship',
       address: '3070 W Shaw Ave',
       courts: 15,
-      sqft: '30,000+',
+      sqft: '36,000',
       opened: 'Winter 2026',
       features: ['Full robotics fleet', 'Café & pro shop'],
       tag: 'FLAGSHIP',
