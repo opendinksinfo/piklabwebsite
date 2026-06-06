@@ -24,6 +24,14 @@
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet"/>
 <link rel="icon" type="image/svg+xml" href="favicon.svg"/>
 <link rel="stylesheet" href="styles.css"/>
+
+<!-- Production React UMD (minified) — synchronous + ordered before the module script. -->
+<link rel="preload" as="script" href="https://unpkg.com/react@18.3.1/umd/react.production.min.js"/>
+<link rel="preload" as="script" href="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js"/>
+<link rel="modulepreload" href="components/BrandHero.js?v=15"/>
+<link rel="modulepreload" href="components/BrandTease.js?v=15"/>
+<link rel="modulepreload" href="components/Footer.js?v=15"/>
+
 <style>
   /* hide global nav on the brand front door — the split hero IS the nav */
   body.brand-front .nav { display: none; }
@@ -42,25 +50,50 @@
   <p>Contact: <a href="mailto:info@piklab.ai">info@piklab.ai</a></p>
 </noscript>
 
-<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
-<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
-<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<!--
+  Production load order:
+  1. React UMD globals (classic, blocking — runs before any module).
+  2. ReactDOM UMD global (classic, blocking).
+  3. ES module entry: static imports for BrandHero/BrandTease/Footer are resolved
+     before module body runs, so the App tree is fully defined at render time.
+  4. Boot guard: defer createRoot until DOM is ready AND React/ReactDOM globals
+     exist — eliminates the race where a module evaluates before React is on window.
+-->
+<script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin="anonymous"></script>
 
-<script type="text/babel" src="components/BrandHero.jsx?v=14"></script>
-<script type="text/babel" src="components/BrandTease.jsx?v=14"></script>
-<script type="text/babel" src="components/Footer.jsx?v=14"></script>
+<script type="module">
+  import { BrandHero } from './components/BrandHero.js?v=15';
+  import { BrandTease } from './components/BrandTease.js?v=15';
+  import { Footer } from './components/Footer.js?v=15';
 
-<script type="text/babel">
-function App() {
-  return (
-    <>
-      <BrandHero/>
-      <BrandTease/>
-      <Footer/>
-    </>
-  );
-}
-ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
+  const h = React.createElement;
+
+  function App() {
+    return h(React.Fragment, null,
+      h(BrandHero),
+      h(BrandTease),
+      h(Footer)
+    );
+  }
+
+  function boot() {
+    // Guard: React must be on window. With UMD scripts ordered above this
+    // module (which is implicitly deferred), this should always be true.
+    if (!window.React || !window.ReactDOM) {
+      requestAnimationFrame(boot);
+      return;
+    }
+    const mount = document.getElementById('root');
+    if (!mount) return;
+    ReactDOM.createRoot(mount).render(h(App));
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', boot, { once: true });
+  } else {
+    boot();
+  }
 </script>
 </body>
 </html>
