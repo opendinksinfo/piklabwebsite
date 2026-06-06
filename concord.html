@@ -24,6 +24,11 @@
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet"/>
 <link rel="icon" type="image/svg+xml" href="favicon.svg"/>
 <link rel="stylesheet" href="styles.css"/>
+
+<link rel="preload" as="script" href="https://unpkg.com/react@18.3.1/umd/react.production.min.js"/>
+<link rel="preload" as="script" href="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js"/>
+<link rel="modulepreload" href="components/Nav.js?v=15"/>
+<link rel="modulepreload" href="components/Footer.js?v=15"/>
 </head>
 <body>
 <div id="root"></div>
@@ -34,154 +39,121 @@
   <p><a href="locations.html">All PikLab locations</a> · <a href="mailto:info@piklab.ai">info@piklab.ai</a></p>
 </noscript>
 
-<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
-<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
-<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin="anonymous"></script>
 
-<script type="text/babel" src="components/Nav.jsx?v=15"></script>
-<script type="text/babel" src="components/Footer.jsx?v=15"></script>
+<script type="module">
+  import { Nav } from './components/Nav.js?v=15';
+  import { Footer } from './components/Footer.js?v=15';
 
-<script type="text/babel">
-function ConcordPilot() {
-  return (
-    <section style={{
-      background: 'var(--navy)',
-      color: 'var(--off-white)',
-      padding: 'clamp(96px, 13vw, 180px) 0 clamp(56px, 7vw, 96px)',
-      position: 'relative',
-      overflow: 'hidden',
-    }}>
-      <svg style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', opacity: 0.4 }} aria-hidden>
-        <defs>
-          <pattern id="pilot-grid" width="48" height="48" patternUnits="userSpaceOnUse">
-            <path d="M 48 0 L 0 0 0 48" fill="none" stroke="rgba(196, 216, 46, 0.08)" strokeWidth="1"/>
-          </pattern>
-        </defs>
-        <rect width="100%" height="100%" fill="url(#pilot-grid)"/>
-      </svg>
-      <div className="container" style={{ position: 'relative' }}>
+  const h = React.createElement;
+  const { Fragment } = React;
 
-        <div className="mono" style={{
-          display: 'inline-flex',
-          alignItems: 'center',
-          gap: 8,
-          color: 'var(--green)',
-          fontSize: '0.7rem',
-          letterSpacing: '0.18em',
-          marginBottom: 28,
-          padding: '6px 12px',
-          border: '1px solid var(--green)',
-          borderRadius: 999,
-        }}>
-          <span style={{ width: 6, height: 6, borderRadius: '50%', background: 'var(--coral)' }} className="pulse-dot"></span>
-          PILOT LIVE · SINCE LATE 2025
-        </div>
-
-        <h1 className="h-display" style={{
-          fontSize: 'clamp(2.6rem, 7vw, 5.6rem)',
-          color: 'var(--off-white)',
-          margin: 0,
-          lineHeight: 1,
-          maxWidth: '18ch',
-        }}>
-          Pilot at <span style={{ color: 'var(--green)', fontStyle: 'italic', fontWeight: 500 }}>Indoor Pickleball X</span> Concord<span style={{ color: 'var(--green)' }}>.</span>
-        </h1>
-
-        <p style={{ color: 'rgba(250, 250, 247, 0.75)', fontSize: '1.15rem', maxWidth: '60ch', marginTop: 24, lineHeight: 1.6 }}>
-          Software pilot at <strong>Indoor Pickleball X Concord</strong> — 9 courts, 4,000+ players. Booking, court ops, AI: live. Robots: 2026. Indoor Pickleball X hosts, PikLab provides the tech.
-        </p>
-
-        {/* Stats / facts */}
-        <div style={{
-          marginTop: 48,
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))',
-          gap: 1,
-          background: 'rgba(196, 216, 46, 0.18)',
-          borderRadius: 14,
-          overflow: 'hidden',
-          border: '1px solid rgba(196, 216, 46, 0.2)',
-          maxWidth: 880,
-        }}>
-          {[
-            ['Host club', 'Indoor Pickleball X'],
-            ['Location', 'Concord, CA'],
-            ['Courts', '9'],
-            ['Players', '4,000+'],
-            ['PikLab software', 'Live'],
-            ['PikLab robotics', '2026'],
-          ].map(([k, v]) => (
-            <div key={k} style={{ background: 'var(--navy)', padding: '20px 22px' }}>
-              <div className="mono" style={{ color: 'var(--green)', fontSize: '0.66rem', letterSpacing: '0.14em' }}>{k.toUpperCase()}</div>
-              <div style={{
-                fontFamily: 'var(--font-display)',
-                fontWeight: 600,
-                fontSize: '1.08rem',
-                letterSpacing: '-0.01em',
-                marginTop: 6,
-                color: 'var(--off-white)',
-              }}>{v}</div>
-            </div>
-          ))}
-        </div>
-
-        {/* What PikLab does at Concord today */}
-        <div style={{ marginTop: 56, maxWidth: 880 }}>
-          <div className="mono" style={{ color: 'var(--green)', fontSize: '0.7rem', letterSpacing: '0.18em', marginBottom: 18 }}>
-            WHAT PIKLAB RUNS AT CONCORD TODAY
-          </div>
-          <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gap: 14 }}>
-            {[
-              ['Booking', 'Courts, leagues, drop-ins — all PikLab.'],
-              ['Court ops', 'Conflicts, no-shows, day-of swaps — LLM coordinated.'],
-              ['AI shot tracking', 'Six cameras per court. Live tracking → coaching reports.'],
-              ['Robotics — 2026', 'Humanoid concierge, ball feeders, quadruped court managers — deploying 2026.'],
-            ].map(([k, v]) => (
-              <li key={k} style={{ display: 'grid', gridTemplateColumns: '170px 1fr', gap: 20, padding: '14px 0', borderTop: '1px solid rgba(196, 216, 46, 0.12)' }}>
-                <span className="mono" style={{ color: 'var(--green)', fontSize: '0.74rem', letterSpacing: '0.12em' }}>{k.toUpperCase()}</span>
-                <span style={{ color: 'rgba(250, 250, 247, 0.85)', fontSize: '0.96rem', lineHeight: 1.55 }}>{v}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        {/* CTAs */}
-        <div style={{ display: 'flex', gap: 12, marginTop: 48, flexWrap: 'wrap' }}>
-          <a href="lab.html" className="btn btn-green">
-            See the Lab
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-              <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-          </a>
-          <a href="mailto:info@piklab.ai" className="btn btn-ghost-light">
-            Contact us
-          </a>
-        </div>
-
-        {/* Note */}
-        <div className="mono" style={{
-          marginTop: 56,
-          fontSize: '0.66rem',
-          letterSpacing: '0.14em',
-          color: 'rgba(250, 250, 247, 0.4)',
-        }}>
-          INDOOR PICKLEBALL X IS THE HOST CLUB · PIKLAB IS THE TECHNOLOGY PARTNER · QUESTIONS? INFO@PIKLAB.AI
-        </div>
-      </div>
-    </section>
+  const rightArrow = h('svg', { width: 16, height: 16, viewBox: '0 0 16 16', fill: 'none' },
+    h('path', { d: 'M3 8h10M9 4l4 4-4 4', stroke: 'currentColor', strokeWidth: '1.8', strokeLinecap: 'round', strokeLinejoin: 'round' })
   );
-}
 
-function App() {
-  return (
-    <>
-      <Nav active="locations"/>
-      <ConcordPilot/>
-      <Footer/>
-    </>
+  const gridBg = h('svg', { 'aria-hidden': true, style: { position: 'absolute', inset: 0, width: '100%', height: '100%', opacity: 0.4 } },
+    h('defs', null,
+      h('pattern', { id: 'pilot-grid', width: 48, height: 48, patternUnits: 'userSpaceOnUse' },
+        h('path', { d: 'M 48 0 L 0 0 0 48', fill: 'none', stroke: 'rgba(196, 216, 46, 0.08)', strokeWidth: '1' })
+      )
+    ),
+    h('rect', { width: '100%', height: '100%', fill: 'url(#pilot-grid)' })
   );
-}
-ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
+
+  const statRows = [
+    ['Host club', 'Indoor Pickleball X'],
+    ['Location', 'Concord, CA'],
+    ['Courts', '9'],
+    ['Players', '4,000+'],
+    ['PikLab software', 'Live'],
+    ['PikLab robotics', '2026'],
+  ];
+
+  const runRows = [
+    ['Booking',          'Courts, leagues, drop-ins — all PikLab.'],
+    ['Court ops',        'Conflicts, no-shows, day-of swaps — LLM coordinated.'],
+    ['AI shot tracking', 'Six cameras per court. Live tracking → coaching reports.'],
+    ['Robotics — 2026',  'Humanoid concierge, ball feeders, quadruped court managers — deploying 2026.'],
+  ];
+
+  function ConcordPilot() {
+    return h('section', { style: { background: 'var(--navy)', color: 'var(--off-white)', padding: 'clamp(96px, 13vw, 180px) 0 clamp(56px, 7vw, 96px)', position: 'relative', overflow: 'hidden' } },
+      gridBg,
+      h('div', { className: 'container', style: { position: 'relative' } },
+        h('div', { className: 'mono', style: { display: 'inline-flex', alignItems: 'center', gap: 8, color: 'var(--green)', fontSize: '0.7rem', letterSpacing: '0.18em', marginBottom: 28, padding: '6px 12px', border: '1px solid var(--green)', borderRadius: 999 } },
+          h('span', { className: 'pulse-dot', style: { width: 6, height: 6, borderRadius: '50%', background: 'var(--coral)' } }),
+          'PILOT LIVE · SINCE LATE 2025'
+        ),
+        h('h1', { className: 'h-display', style: { fontSize: 'clamp(2.6rem, 7vw, 5.6rem)', color: 'var(--off-white)', margin: 0, lineHeight: 1, maxWidth: '18ch' } },
+          'Pilot at ',
+          h('span', { style: { color: 'var(--green)', fontStyle: 'italic', fontWeight: 500 } }, 'Indoor Pickleball X'),
+          ' Concord',
+          h('span', { style: { color: 'var(--green)' } }, '.')
+        ),
+        h('p', { style: { color: 'rgba(250, 250, 247, 0.75)', fontSize: '1.15rem', maxWidth: '60ch', marginTop: 24, lineHeight: 1.6 } },
+          'Software pilot at ',
+          h('strong', null, 'Indoor Pickleball X Concord'),
+          ' — 9 courts, 4,000+ players. Booking, court ops, AI: live. Robots: 2026. Indoor Pickleball X hosts, PikLab provides the tech.'
+        ),
+        // Stats grid
+        h('div', { style: { marginTop: 48, display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: 1, background: 'rgba(196, 216, 46, 0.18)', borderRadius: 14, overflow: 'hidden', border: '1px solid rgba(196, 216, 46, 0.2)', maxWidth: 880 } },
+          ...statRows.map(([k, v]) =>
+            h('div', { key: k, style: { background: 'var(--navy)', padding: '20px 22px' } },
+              h('div', { className: 'mono', style: { color: 'var(--green)', fontSize: '0.66rem', letterSpacing: '0.14em' } }, k.toUpperCase()),
+              h('div', { style: { fontFamily: 'var(--font-display)', fontWeight: 600, fontSize: '1.08rem', letterSpacing: '-0.01em', marginTop: 6, color: 'var(--off-white)' } }, v)
+            )
+          )
+        ),
+        // What PikLab runs today
+        h('div', { style: { marginTop: 56, maxWidth: 880 } },
+          h('div', { className: 'mono', style: { color: 'var(--green)', fontSize: '0.7rem', letterSpacing: '0.18em', marginBottom: 18 } }, 'WHAT PIKLAB RUNS AT CONCORD TODAY'),
+          h('ul', { style: { listStyle: 'none', padding: 0, margin: 0, display: 'grid', gap: 14 } },
+            ...runRows.map(([k, v]) =>
+              h('li', { key: k, style: { display: 'grid', gridTemplateColumns: '170px 1fr', gap: 20, padding: '14px 0', borderTop: '1px solid rgba(196, 216, 46, 0.12)' } },
+                h('span', { className: 'mono', style: { color: 'var(--green)', fontSize: '0.74rem', letterSpacing: '0.12em' } }, k.toUpperCase()),
+                h('span', { style: { color: 'rgba(250, 250, 247, 0.85)', fontSize: '0.96rem', lineHeight: 1.55 } }, v)
+              )
+            )
+          )
+        ),
+        // CTAs
+        h('div', { style: { display: 'flex', gap: 12, marginTop: 48, flexWrap: 'wrap' } },
+          h('a', { href: 'lab.html', className: 'btn btn-green' }, 'See the Lab', rightArrow),
+          h('a', { href: 'mailto:info@piklab.ai', className: 'btn btn-ghost-light' }, 'Contact us')
+        ),
+        // Note
+        h('div', { className: 'mono', style: { marginTop: 56, fontSize: '0.66rem', letterSpacing: '0.14em', color: 'rgba(250, 250, 247, 0.4)' } },
+          'INDOOR PICKLEBALL X IS THE HOST CLUB · PIKLAB IS THE TECHNOLOGY PARTNER · QUESTIONS? INFO@PIKLAB.AI'
+        )
+      )
+    );
+  }
+
+  function App() {
+    return h(Fragment, null,
+      h(Nav, { active: 'locations' }),
+      h(ConcordPilot),
+      h(Footer)
+    );
+  }
+
+  function boot() {
+    if (!window.React || !window.ReactDOM) {
+      requestAnimationFrame(boot);
+      return;
+    }
+    const mount = document.getElementById('root');
+    if (!mount) return;
+    ReactDOM.createRoot(mount).render(h(App));
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', boot, { once: true });
+  } else {
+    boot();
+  }
 </script>
 </body>
 </html>

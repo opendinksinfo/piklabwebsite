@@ -24,6 +24,20 @@
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet"/>
 <link rel="icon" type="image/svg+xml" href="favicon.svg"/>
 <link rel="stylesheet" href="styles.css"/>
+
+<link rel="preload" as="script" href="https://unpkg.com/react@18.3.1/umd/react.production.min.js"/>
+<link rel="preload" as="script" href="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js"/>
+<link rel="modulepreload" href="components/Nav.js?v=15"/>
+<link rel="modulepreload" href="components/Hero.js?v=15"/>
+<link rel="modulepreload" href="components/Marquee.js?v=15"/>
+<link rel="modulepreload" href="components/Manifesto.js?v=15"/>
+<link rel="modulepreload" href="components/Stats.js?v=15"/>
+<link rel="modulepreload" href="components/AIDemo.js?v=15"/>
+<link rel="modulepreload" href="components/AIRobotics.js?v=15"/>
+<link rel="modulepreload" href="components/RobotCrew.js?v=15"/>
+<link rel="modulepreload" href="components/Locations.js?v=15"/>
+<link rel="modulepreload" href="components/Community.js?v=15"/>
+<link rel="modulepreload" href="components/Footer.js?v=15"/>
 </head>
 <body>
 <div id="root"></div>
@@ -39,44 +53,55 @@
   <p>Contact: <a href="mailto:info@piklab.ai">info@piklab.ai</a></p>
 </noscript>
 
-<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
-<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
-<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin="anonymous"></script>
 
-<script type="text/babel" src="tweaks-panel.jsx?v=15"></script>
-<script type="text/babel" src="components/Nav.jsx?v=15"></script>
-<script type="text/babel" src="components/Hero.jsx?v=15"></script>
-<script type="text/babel" src="components/Marquee.jsx?v=15"></script>
-<script type="text/babel" src="components/Manifesto.jsx?v=15"></script>
-<script type="text/babel" src="components/Stats.jsx?v=15"></script>
-<script type="text/babel" src="components/AIDemo.jsx?v=15"></script>
-<script type="text/babel" src="components/AIRobotics.jsx?v=15"></script>
-<script type="text/babel" src="components/RobotCrew.jsx?v=15"></script>
-<script type="text/babel" src="components/Locations.jsx?v=15"></script>
-<script type="text/babel" src="components/Community.jsx?v=15"></script>
-<script type="text/babel" src="components/Tweaks.jsx?v=15"></script>
-<script type="text/babel" src="components/Footer.jsx?v=15"></script>
+<script type="module">
+  import { Nav } from './components/Nav.js?v=15';
+  import { Hero } from './components/Hero.js?v=15';
+  import { Marquee } from './components/Marquee.js?v=15';
+  import { Manifesto } from './components/Manifesto.js?v=15';
+  import { Stats } from './components/Stats.js?v=15';
+  import { AIDemo } from './components/AIDemo.js?v=15';
+  import { AIRobotics } from './components/AIRobotics.js?v=15';
+  import { RobotCrew } from './components/RobotCrew.js?v=15';
+  import { Locations } from './components/Locations.js?v=15';
+  import { Community } from './components/Community.js?v=15';
+  import { Footer } from './components/Footer.js?v=15';
 
-<script type="text/babel">
-function App() {
-  return (
-    <>
-      <Nav active="club"/>
-      <Hero/>
-      <Marquee/>
-      <Manifesto/>
-      <Stats/>
-      <AIDemo/>
-      <AIRobotics/>
-      <RobotCrew/>
-      <Locations compact={true}/>
-      <Community/>
-      <Footer/>
-      <PikLabTweaks/>
-    </>
-  );
-}
-ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
+  const h = React.createElement;
+
+  function App() {
+    return h(React.Fragment, null,
+      h(Nav, { active: 'club' }),
+      h(Hero),
+      h(Marquee),
+      h(Manifesto),
+      h(Stats),
+      h(AIDemo),
+      h(AIRobotics),
+      h(RobotCrew),
+      h(Locations, { compact: true }),
+      h(Community),
+      h(Footer)
+    );
+  }
+
+  function boot() {
+    if (!window.React || !window.ReactDOM) {
+      requestAnimationFrame(boot);
+      return;
+    }
+    const mount = document.getElementById('root');
+    if (!mount) return;
+    ReactDOM.createRoot(mount).render(h(App));
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', boot, { once: true });
+  } else {
+    boot();
+  }
 </script>
 </body>
 </html>
