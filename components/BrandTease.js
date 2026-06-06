@@ -1,4 +1,7 @@
-// BrandTease — ES module (React.createElement form). For index.html (production module path).
+// BrandTease — ES module. For index.html (production module path).
+// React is resolved via the document's import map (see index.html).
+import React from 'react';
+
 const h = React.createElement;
 
 const arrowIcon = h('svg', { width: 16, height: 16, viewBox: '0 0 16 16', fill: 'none' },

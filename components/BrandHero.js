@@ -1,4 +1,7 @@
-// BrandHero — ES module (React.createElement form). Split two-door hero for index.html.
+// BrandHero — ES module. Split two-door hero for index.html.
+// React is resolved via the document's import map (see index.html).
+import React from 'react';
+
 const h = React.createElement;
 const { useState, useEffect } = React;
 

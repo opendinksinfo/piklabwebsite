@@ -21,16 +21,35 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="preconnect" href="https://esm.sh" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet"/>
 <link rel="icon" type="image/svg+xml" href="favicon.svg"/>
 <link rel="stylesheet" href="styles.css"/>
 
-<!-- Production React UMD (minified) — synchronous + ordered before the module script. -->
-<link rel="preload" as="script" href="https://unpkg.com/react@18.3.1/umd/react.production.min.js"/>
-<link rel="preload" as="script" href="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js"/>
-<link rel="modulepreload" href="components/BrandHero.js?v=15"/>
-<link rel="modulepreload" href="components/BrandTease.js?v=15"/>
-<link rel="modulepreload" href="components/Footer.js?v=15"/>
+<!--
+  Native ES module pipeline:
+  1. Import map declares the bare specifier "react" and "react-dom/client"
+     resolving to esm.sh production builds.
+  2. modulepreload hints — URLs MUST byte-match the import strings used below.
+  3. Single <script type="module"> imports everything and renders. Module
+     specifier resolution is top-down and deterministic, so no boot guard,
+     no rAF polling, no DOM-ready check needed — module scripts are deferred
+     by spec and run after the document is parsed.
+-->
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@18.3.1",
+    "react-dom/client": "https://esm.sh/react-dom@18.3.1/client"
+  }
+}
+</script>
+
+<link rel="modulepreload" href="https://esm.sh/react@18.3.1"/>
+<link rel="modulepreload" href="https://esm.sh/react-dom@18.3.1/client"/>
+<link rel="modulepreload" href="./components/BrandHero.js?v=16"/>
+<link rel="modulepreload" href="./components/BrandTease.js?v=16"/>
+<link rel="modulepreload" href="./components/Footer.js?v=15"/>
 
 <style>
   /* hide global nav on the brand front door — the split hero IS the nav */
@@ -50,50 +69,28 @@
   <p>Contact: <a href="mailto:info@piklab.ai">info@piklab.ai</a></p>
 </noscript>
 
-<!--
-  Production load order:
-  1. React UMD globals (classic, blocking — runs before any module).
-  2. ReactDOM UMD global (classic, blocking).
-  3. ES module entry: static imports for BrandHero/BrandTease/Footer are resolved
-     before module body runs, so the App tree is fully defined at render time.
-  4. Boot guard: defer createRoot until DOM is ready AND React/ReactDOM globals
-     exist — eliminates the race where a module evaluates before React is on window.
--->
-<script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" crossorigin="anonymous"></script>
-<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin="anonymous"></script>
-
 <script type="module">
-  import { BrandHero } from './components/BrandHero.js?v=15';
-  import { BrandTease } from './components/BrandTease.js?v=15';
+  import React from 'react';
+  import { createRoot } from 'react-dom/client';
+  import { BrandHero } from './components/BrandHero.js?v=16';
+  import { BrandTease } from './components/BrandTease.js?v=16';
   import { Footer } from './components/Footer.js?v=15';
+
+  // Transition shim: Footer.js is shared with 8 other pages still on the
+  // UMD pipeline (where window.React is set by the prod-min script tag).
+  // Set window.React here so Footer.js's `React.createElement` keeps working
+  // on this page. This line is removed once every page has its own import map.
+  window.React = React;
 
   const h = React.createElement;
 
-  function App() {
-    return h(React.Fragment, null,
-      h(BrandHero),
-      h(BrandTease),
-      h(Footer)
-    );
-  }
+  const App = () => h(React.Fragment, null,
+    h(BrandHero),
+    h(BrandTease),
+    h(Footer)
+  );
 
-  function boot() {
-    // Guard: React must be on window. With UMD scripts ordered above this
-    // module (which is implicitly deferred), this should always be true.
-    if (!window.React || !window.ReactDOM) {
-      requestAnimationFrame(boot);
-      return;
-    }
-    const mount = document.getElementById('root');
-    if (!mount) return;
-    ReactDOM.createRoot(mount).render(h(App));
-  }
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', boot, { once: true });
-  } else {
-    boot();
-  }
+  createRoot(document.getElementById('root')).render(h(App));
 </script>
 </body>
 </html>
