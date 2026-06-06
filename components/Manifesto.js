@@ -1,4 +1,4 @@
-// Manifesto — ES module. Sticky left + 3 blocks right. React via import map.
+// Manifesto — sticky left + 3 blocks right.
 import React from 'react';
 
 const h = React.createElement;

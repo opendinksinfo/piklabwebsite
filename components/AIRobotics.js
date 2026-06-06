@@ -1,4 +1,4 @@
-// AIRobotics — ES module. LLM orchestrator + robot fleet. React via import map.
+// AIRobotics — LLM orchestrator + robot fleet.
 import React from 'react';
 
 const h = React.createElement;

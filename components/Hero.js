@@ -1,4 +1,4 @@
-// Hero — ES module. Animated perspective court scene. React via import map.
+// Hero — animated perspective court scene.
 import React from 'react';
 
 const h = React.createElement;

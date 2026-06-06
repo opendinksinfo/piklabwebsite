@@ -1,4 +1,4 @@
-// ComingSoon — ES module. Per-city placeholder. React via import map.
+// ComingSoon — per-city placeholder.
 import React from 'react';
 
 const h = React.createElement;

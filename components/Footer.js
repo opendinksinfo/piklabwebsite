@@ -1,4 +1,4 @@
-// Footer — ES module. Used by every page. React via import map.
+// Footer — used by every page.
 import React from 'react';
 
 const h = React.createElement;

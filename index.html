@@ -26,12 +26,6 @@
 <link rel="icon" type="image/svg+xml" href="favicon.svg"/>
 <link rel="stylesheet" href="styles.css"/>
 
-<!--
-  Native ES module pipeline. Bare specifiers 'react' and 'react-dom/client'
-  resolve via the import map to esm.sh production builds. Every component
-  module self-imports React, so static imports work and no boot guard is
-  needed — module scripts are deferred by spec.
--->
 <script type="importmap">
 {
   "imports": {

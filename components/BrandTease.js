@@ -1,5 +1,4 @@
-// BrandTease — ES module. For index.html (production module path).
-// React is resolved via the document's import map (see index.html).
+// BrandTease — side-by-side club/lab teaser cards for index.html.
 import React from 'react';
 
 const h = React.createElement;

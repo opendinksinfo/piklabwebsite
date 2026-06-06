@@ -1,4 +1,4 @@
-// Community — ES module. Team grid (coaches + engineers). React via import map.
+// Community — team grid (coaches + engineers).
 import React from 'react';
 
 const h = React.createElement;

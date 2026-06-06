@@ -1,4 +1,4 @@
-// LocationsPage — ES module. Hero band + timeline strip. React via import map.
+// LocationsPage — hero band + timeline strip for locations.html.
 import React from 'react';
 
 const h = React.createElement;

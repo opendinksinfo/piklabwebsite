@@ -1,4 +1,4 @@
-// Marquee — ES module. Scrolling stat strip. React via import map.
+// Marquee — scrolling stat strip.
 import React from 'react';
 
 const h = React.createElement;

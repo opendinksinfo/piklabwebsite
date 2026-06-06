@@ -1,4 +1,4 @@
-// Nav — ES module. Used by every page. React via import map.
+// Nav — site nav, used by every page except the brand front door.
 import React from 'react';
 
 const h = React.createElement;

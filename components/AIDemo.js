@@ -1,4 +1,4 @@
-// AIDemo — ES module. Animated top-down court demo. React via import map.
+// AIDemo — animated top-down court demo.
 import React from 'react';
 
 const h = React.createElement;
