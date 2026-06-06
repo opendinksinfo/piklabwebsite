@@ -1,5 +1,4 @@
-// Footer — ES module (React.createElement form). Drop-in replacement for Footer.jsx
-// on pages migrated off in-browser Babel. Other pages still use Footer.jsx.
+// Footer — ES module (React.createElement form). Used by every page.
 const h = React.createElement;
 
 const linkCol = (heading, links) =>
