@@ -13,7 +13,7 @@ function LocationsHero() {
       <div className="container" style={{ position: 'relative' }}>
         <div className="eyebrow" style={{ color: 'var(--green)' }}>Locations</div>
         <h1 className="h-display" style={{ fontSize: 'clamp(3rem, 8vw, 6.5rem)', color: 'var(--off-white)', marginTop: 16, maxWidth: 18 + 'ch' }}>
-          One open today.<br/>
+          One pilot live.<br/>
           <span style={{ color: 'var(--green)', fontStyle: 'italic', fontWeight: 500 }}>Four more on the way.</span>
         </h1>
         <p style={{ color: 'rgba(250, 250, 247, 0.7)', fontSize: '1.15rem', maxWidth: 56 + 'ch', marginTop: 24, lineHeight: 1.6 }}>

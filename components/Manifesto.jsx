@@ -25,7 +25,7 @@ function Manifesto() {
             <ManifestoBlock
               kicker="The first deployment"
               title="A real pickleball club."
-              body="Pilot at Indoor Pickleball X Concord. Members get a club that just works. We get a busy testbed."
+              body="Pilot at Indoor Pickleball X Concord. Players get a club that just works. We get a busy testbed."
               icon={<CourtIcon />}
               tone="light"
             />
