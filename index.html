@@ -72,15 +72,18 @@
 <script type="module">
   import React from 'react';
   import { createRoot } from 'react-dom/client';
-  import { BrandHero } from './components/BrandHero.js?v=16';
-  import { BrandTease } from './components/BrandTease.js?v=16';
-  import { Footer } from './components/Footer.js?v=15';
 
-  // Transition shim: Footer.js is shared with 8 other pages still on the
-  // UMD pipeline (where window.React is set by the prod-min script tag).
-  // Set window.React here so Footer.js's `React.createElement` keeps working
-  // on this page. This line is removed once every page has its own import map.
+  // Transition shim: Footer.js (shared across all pages) reads React from
+  // the global. Static `import` is hoisted — it would evaluate before this
+  // assignment — so component modules are dynamic-imported below, after
+  // window.React is set. Remove once every component has its own React import.
   window.React = React;
+
+  const [{ BrandHero }, { BrandTease }, { Footer }] = await Promise.all([
+    import('./components/BrandHero.js?v=16'),
+    import('./components/BrandTease.js?v=16'),
+    import('./components/Footer.js?v=15'),
+  ]);
 
   const h = React.createElement;
 
