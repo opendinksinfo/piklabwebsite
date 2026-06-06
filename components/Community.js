@@ -1,4 +1,6 @@
-// Community — ES module (React.createElement form). Team grid (coaches + engineers).
+// Community — ES module. Team grid (coaches + engineers). React via import map.
+import React from 'react';
+
 const h = React.createElement;
 
 const coaches = [

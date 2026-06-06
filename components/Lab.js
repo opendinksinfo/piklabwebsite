@@ -1,6 +1,8 @@
 // Lab — ES module bundling the four lab.html-only sections:
 //   LabHero · LabFieldNotes (with X widget) · LabSpinouts · LabCareers.
-// Keeps lab.html as a thin shell.
+// Keeps lab.html as a thin shell. React via import map.
+import React from 'react';
+
 const h = React.createElement;
 const { useEffect } = React;
 

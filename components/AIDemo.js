@@ -1,4 +1,6 @@
-// AIDemo — ES module (React.createElement form). Animated top-down court demo.
+// AIDemo — ES module. Animated top-down court demo. React via import map.
+import React from 'react';
+
 const h = React.createElement;
 const { useState, useEffect } = React;
 

@@ -1,4 +1,6 @@
-// ComingSoon — ES module (React.createElement form). Per-city placeholder.
+// ComingSoon — ES module. Per-city placeholder. React via import map.
+import React from 'react';
+
 const h = React.createElement;
 const { Fragment } = React;
 

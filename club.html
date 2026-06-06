@@ -26,12 +26,6 @@
 <link rel="icon" type="image/svg+xml" href="favicon.svg"/>
 <link rel="stylesheet" href="styles.css"/>
 
-<!--
-  Native ES module pipeline (import map). See index.html for full notes.
-  Component modules still use `window.React` (shared with other pages on
-  the UMD pipeline), so they're dynamic-imported below — after the shim
-  is set, before render.
--->
 <script type="importmap">
 {
   "imports": {
@@ -43,17 +37,17 @@
 
 <link rel="modulepreload" href="https://esm.sh/react@18.3.1"/>
 <link rel="modulepreload" href="https://esm.sh/react-dom@18.3.1/client"/>
-<link rel="modulepreload" href="./components/Nav.js?v=15"/>
-<link rel="modulepreload" href="./components/Hero.js?v=15"/>
-<link rel="modulepreload" href="./components/Marquee.js?v=15"/>
-<link rel="modulepreload" href="./components/Manifesto.js?v=15"/>
-<link rel="modulepreload" href="./components/Stats.js?v=15"/>
-<link rel="modulepreload" href="./components/AIDemo.js?v=15"/>
-<link rel="modulepreload" href="./components/AIRobotics.js?v=15"/>
-<link rel="modulepreload" href="./components/RobotCrew.js?v=15"/>
-<link rel="modulepreload" href="./components/Locations.js?v=15"/>
-<link rel="modulepreload" href="./components/Community.js?v=15"/>
-<link rel="modulepreload" href="./components/Footer.js?v=15"/>
+<link rel="modulepreload" href="./components/Nav.js?v=17"/>
+<link rel="modulepreload" href="./components/Hero.js?v=17"/>
+<link rel="modulepreload" href="./components/Marquee.js?v=17"/>
+<link rel="modulepreload" href="./components/Manifesto.js?v=17"/>
+<link rel="modulepreload" href="./components/Stats.js?v=17"/>
+<link rel="modulepreload" href="./components/AIDemo.js?v=17"/>
+<link rel="modulepreload" href="./components/AIRobotics.js?v=17"/>
+<link rel="modulepreload" href="./components/RobotCrew.js?v=17"/>
+<link rel="modulepreload" href="./components/Locations.js?v=17"/>
+<link rel="modulepreload" href="./components/Community.js?v=17"/>
+<link rel="modulepreload" href="./components/Footer.js?v=17"/>
 </head>
 <body>
 <div id="root"></div>
@@ -72,26 +66,17 @@
 <script type="module">
   import React from 'react';
   import { createRoot } from 'react-dom/client';
-
-  window.React = React;
-
-  const [
-    { Nav }, { Hero }, { Marquee }, { Manifesto }, { Stats },
-    { AIDemo }, { AIRobotics }, { RobotCrew }, { Locations },
-    { Community }, { Footer }
-  ] = await Promise.all([
-    import('./components/Nav.js?v=15'),
-    import('./components/Hero.js?v=15'),
-    import('./components/Marquee.js?v=15'),
-    import('./components/Manifesto.js?v=15'),
-    import('./components/Stats.js?v=15'),
-    import('./components/AIDemo.js?v=15'),
-    import('./components/AIRobotics.js?v=15'),
-    import('./components/RobotCrew.js?v=15'),
-    import('./components/Locations.js?v=15'),
-    import('./components/Community.js?v=15'),
-    import('./components/Footer.js?v=15'),
-  ]);
+  import { Nav } from './components/Nav.js?v=17';
+  import { Hero } from './components/Hero.js?v=17';
+  import { Marquee } from './components/Marquee.js?v=17';
+  import { Manifesto } from './components/Manifesto.js?v=17';
+  import { Stats } from './components/Stats.js?v=17';
+  import { AIDemo } from './components/AIDemo.js?v=17';
+  import { AIRobotics } from './components/AIRobotics.js?v=17';
+  import { RobotCrew } from './components/RobotCrew.js?v=17';
+  import { Locations } from './components/Locations.js?v=17';
+  import { Community } from './components/Community.js?v=17';
+  import { Footer } from './components/Footer.js?v=17';
 
   const h = React.createElement;
 

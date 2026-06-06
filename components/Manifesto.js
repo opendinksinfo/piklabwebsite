@@ -1,4 +1,6 @@
-// Manifesto — ES module (React.createElement form). Sticky left + 3 blocks right.
+// Manifesto — ES module. Sticky left + 3 blocks right. React via import map.
+import React from 'react';
+
 const h = React.createElement;
 
 const courtIcon = h('svg', { width: 56, height: 40, viewBox: '0 0 56 40', fill: 'none' },

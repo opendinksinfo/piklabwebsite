@@ -1,4 +1,6 @@
-// Locations — ES module (React.createElement form). Grid of city cards.
+// Locations — ES module. Grid of city cards. React via import map.
+import React from 'react';
+
 const h = React.createElement;
 
 const locations = [

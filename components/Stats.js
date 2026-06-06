@@ -1,4 +1,6 @@
-// Stats — ES module (React.createElement form). 4-cell proof strip.
+// Stats — ES module. 4-cell proof strip. React via import map.
+import React from 'react';
+
 const h = React.createElement;
 
 const stats = [

@@ -1,4 +1,6 @@
-// Nav — ES module (React.createElement form). Used by lab.html, fresno.html, etc.
+// Nav — ES module. Used by every page. React via import map.
+import React from 'react';
+
 const h = React.createElement;
 const { useState, useEffect } = React;
 

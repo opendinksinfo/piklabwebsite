@@ -1,4 +1,6 @@
-// LocationsPage — ES module (React.createElement form). Hero band + timeline strip.
+// LocationsPage — ES module. Hero band + timeline strip. React via import map.
+import React from 'react';
+
 const h = React.createElement;
 
 const locGridBg = h('svg', { 'aria-hidden': true, style: { position: 'absolute', inset: 0, width: '100%', height: '100%', opacity: 0.5 } },

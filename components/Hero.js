@@ -1,4 +1,6 @@
-// Hero — ES module (React.createElement form). Animated perspective court scene.
+// Hero — ES module. Animated perspective court scene. React via import map.
+import React from 'react';
+
 const h = React.createElement;
 const { useState, useEffect, Fragment } = React;
 

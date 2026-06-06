@@ -1,4 +1,6 @@
-// Footer — ES module (React.createElement form). Used by every page.
+// Footer — ES module. Used by every page. React via import map.
+import React from 'react';
+
 const h = React.createElement;
 
 const linkCol = (heading, links) =>

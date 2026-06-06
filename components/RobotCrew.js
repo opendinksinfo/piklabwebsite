@@ -1,4 +1,6 @@
-// RobotCrew — ES module (React.createElement form). Four-robot fleet selector.
+// RobotCrew — ES module. Four-robot fleet selector. React via import map.
+import React from 'react';
+
 const h = React.createElement;
 const { useState, useEffect } = React;
 
